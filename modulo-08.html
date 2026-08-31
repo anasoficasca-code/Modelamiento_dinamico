@@ -3,61 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAPOT · Modelo Propio</title>
+<title>RAPOT · Un Nuevo Modelo de Lectura para la ciudad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="modulo-08.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="site-theme.css?v=20260823">
+  <script src="modulo-08-data.js"></script>
+  <script src="modulo-08-relations.js"></script>
+  <link rel="stylesheet" href="navigation-unified.css?v=20260824">
 </head>
 <body>
 <div class="app">
 
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="mark"><i class="fa-solid fa-diagram-project"></i></div>
-      <span>RAPOT</span>
-    </div>
+          <aside class="sidebar sidebar-icons-only">
+    <a class="brand-icon" href="index.html" title="Bogotá Viva · Inicio" aria-label="Inicio"><i class="fa-solid fa-diagram-project"></i></a>
+    <nav class="icon-nav" aria-label="Módulos">
+      <a href="index.html" class="icon-nav-item" title="Inicio"><i class="fa-solid fa-house"></i></a>
+      <a href="modulo-02.html" class="icon-nav-item" title="02 · Medir la red"><i class="fa-solid fa-chart-simple"></i></a>
+      <a href="modulo-03.html" class="icon-nav-item" title="03 · Discurso vs realidad"><i class="fa-solid fa-eye"></i></a>
+      <a href="modulo-04.html" class="icon-nav-item" title="04 · Macromodelos"><i class="fa-solid fa-bullseye"></i></a>
+      <a href="modulo-05.html" class="icon-nav-item" title="05 · Navegador multiescalar"><i class="fa-solid fa-magnifying-glass-location"></i></a>
+      <a href="modulo-06.html" class="icon-nav-item" title="06 · POT ↔ ODS"><i class="fa-solid fa-earth-americas"></i></a>
+      <a href="modulo-07.html" class="icon-nav-item" title="07 · Simulador"><i class="fa-solid fa-flask"></i></a>
+      <a href="modulo-08.html" class="icon-nav-item active" title="08 · Lectura dinámica"><i class="fa-solid fa-wave-square"></i></a>
+      <a href="modulo-09.html" class="icon-nav-item" title="09 · Modelo propio"><i class="fa-solid fa-atom"></i></a>
+    </nav>
 
-    <div class="nav-group">
-      <a href="dashboard.html" class="nav-item "><i class="fa-solid fa-house"></i> Dashboard</a>
-    </div>
-
-    <div class="nav-group">
-      <div class="nav-label">MÓDULOS</div>
-      <a href="modulo-01.html" class="nav-item "><span class="num">01</span><i class="fa-solid fa-diagram-project"></i> Construir la Red</a>
-      <a href="modulo-02.html" class="nav-item "><span class="num">02</span><i class="fa-solid fa-chart-simple"></i> Medir la Red</a>
-      <a href="modulo-03.html" class="nav-item "><span class="num">03</span><i class="fa-solid fa-eye"></i> Discurso vs Realidad</a>
-      <a href="modulo-04.html" class="nav-item "><span class="num">04</span><i class="fa-solid fa-bullseye"></i> Macromodelos</a>
-      <a href="modulo-05.html" class="nav-item "><span class="num">05</span><i class="fa-solid fa-magnifying-glass"></i> Lo que no está</a>
-      <a href="modulo-06.html" class="nav-item "><span class="num">06</span><i class="fa-solid fa-earth-americas"></i> POT ↔ ODS</a>
-      <a href="modulo-07.html" class="nav-item "><span class="num">07</span><i class="fa-solid fa-flask"></i> Simulador</a>
-      <a href="modulo-08.html" class="nav-item active"><span class="num">08</span><i class="fa-solid fa-city"></i> Modelo Propio</a>
-    </div>
-
-    <div class="nav-group">
-      <div class="nav-label">GESTIÓN</div>
-      <a href="proyectos.html" class="nav-item "><i class="fa-solid fa-folder"></i> Proyectos</a>
-      <a href="fuentes.html" class="nav-item "><i class="fa-solid fa-file-lines"></i> Fuentes y Documentos</a>
-      <a href="favoritos.html" class="nav-item "><i class="fa-solid fa-star"></i> Favoritos</a>
-      <a href="reportes.html" class="nav-item "><i class="fa-solid fa-chart-pie"></i> Reportes</a>
-      <a href="configuracion.html" class="nav-item "><i class="fa-solid fa-gear"></i> Configuración</a>
-    </div>
-
-    <div class="sidebar-footer">
-      <div class="avatar-sm">EU</div>
-      <div class="user-meta">
-        <div class="name">Equipo Urbano</div>
-        <div class="role">Administrador</div>
-      </div>
-      <a href="demo.html" class="logout-btn" title="Cerrar sesión"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    <div class="icon-nav-footer">
+      <a href="configuracion.html" class="icon-nav-item" title="Configuración"><i class="fa-solid fa-gear"></i></a>
+      <a href="demo.html" class="icon-nav-item" title="Salir"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
     </div>
   </aside>
 
-  <!-- MAIN -->
   <main class="main">
 
     <div class="topbar">
-      <h1>Modelo Propio</h1>
+      <h1>Módulo 08 · Lectura Dinámica</h1>
       <div class="topbar-actions">
         <div class="search-box"><i class="fa-solid fa-magnifying-glass"></i> Buscar en el sistema...</div>
         <div class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot"></span></div>
@@ -66,32 +49,312 @@
       </div>
     </div>
 
-    <div class="welcome">
-      <h2>Modelo Propio</h2>
-      <p>Prioriza relaciones y construye tu modelo alternativo de ciudad basado en los hallazgos.</p>
-    </div>
+    <section class="module-title" aria-labelledby="module-title-heading">
+      <div class="hero-eyebrow"><span class="eyebrow-line"></span> NUEVO MODELO DE LECTURA</div>
+      <h2 id="module-title-heading" class="module-title-heading">Un Nuevo Modelo de <span class="hero-accent">Lectura para la ciudad</span></h2>
+      <p>Del POT como texto lineal <i class="fa-solid fa-arrow-right-long"></i> a la ciudad como sistema vivo</p>
+    </section>
 
-    <div class="panel" style="text-align:center; padding:60px 30px;">
-      <div style="width:56px;height:56px;border-radius:14px;background:rgba(47,212,200,0.12);color:var(--teal);
-                  display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 18px;">
-        <i class="fa-solid fa-city"></i>
+    <!-- RED -->
+    <div class="network-section">
+      <div class="network-header">
+        <div class="network-heading-copy"><h3><i class="fa-solid fa-share-nodes"></i> Red de datos relacionales de la ciudad</h3><p>La ciudad aparece como un campo de datos vivos: <span class="simulator-agent-key">150 nodos generales y dinámicos</span> conectan ecosistemas, infraestructura, cuidado, movilidad, patrimonio, agentes e instituciones.</p></div>
+        <div class="network-controls">
+          <button class="control-btn active" data-view="todas" onclick="filterView('todas')">Todos los nodos</button>
+          <button class="control-btn" data-view="componentes" onclick="filterView('componentes')">Componentes</button>
+          <button class="control-btn" data-view="actores" onclick="filterView('actores')">Agentes y actores</button>
+        </div>
+        <label class="city-data-filter-label" for="cityDataFilter">Datos de la tabla
+          <select id="cityDataFilter" class="city-data-filter" onchange="setCityDataFilter(this.value)">
+            <option value="all" selected>Red completa · 150 nodos</option>
+            <option value="initial">Vista reducida</option>
+            <option value="Sistema hídrico">Sistema hídrico · 19 nodos</option>
+            <option value="Sistema biótico">Sistema biótico · 14 nodos</option>
+            <option value="Sistema físico-urbano">Sistema físico-urbano · 26 nodos</option>
+            <option value="Sistema de movilidad">Sistema de movilidad · 11 nodos</option>
+            <option value="Sistema de cuidado, servicios y espacio público">Sistema de cuidado, servicios y espacio público · 10 nodos</option>
+            <option value="Sistema socioeconómico y de ocupación">Sistema socioeconómico y de ocupación · 22 nodos</option>
+            <option value="Sistema social-comunitario">Sistema social-comunitario · 14 nodos</option>
+            <option value="Sistema patrimonial y de memoria">Sistema patrimonial y de memoria · 10 nodos</option>
+            <option value="Sistema institucional de gestión">Sistema institucional de gestión · 24 nodos</option>
+          </select>
+        </label>
       </div>
-      <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px;">
-        Este módulo está en construcción
-      </h3>
-      <p style="color:var(--text-dim);font-size:13.5px;max-width:420px;margin:0 auto 22px;">
-        Estamos trabajando en esta sección. Mientras tanto puedes volver al Dashboard o explorar el Módulo 01.
-      </p>
-      <a href="dashboard.html" class="module-btn primary" style="display:inline-flex;max-width:200px;margin:0 auto;">
-        Volver al Dashboard <i class="fa-solid fa-arrow-right"></i>
-      </a>
+
+      <div class="network-viz-wrap">
+        <svg id="readerViz" viewBox="0 0 1060 800" preserveAspectRatio="xMidYMid meet"></svg>
+
+        <div class="network-sidebar">
+          <button class="findings-toggle" id="findingsToggle" type="button"><i class="fa-solid fa-lightbulb"></i> Hallazgo y conclusión</button>
+          <div class="findings-side-panel" id="findingsSidePanel" aria-hidden="true">
+            <div class="findings-side-header"><span>Hallazgo y conclusión</span><button class="edge-info-close" id="findingsClose" type="button" aria-label="Cerrar">&times;</button></div>
+            <div class="finding-side-kicker">LO QUE LA RED HACE VISIBLE</div>
+            <h4>El POT no opera como una cadena lineal</h4>
+            <p>La red muestra que una regla territorial solo se vuelve real cuando atraviesa agentes, instituciones, mercados, infraestructuras, mediadores y ecosistemas. Una modificación en vivienda, movilidad o agua redistribuye tiempos, riesgos y posibilidades de acceso.</p>
+            <div class="finding-side-kicker">HALLAZGO</div>
+            <p><strong>La ciudad funciona como un sistema de dependencias cruzadas:</strong> los agentes no recorren objetos aislados, sino cadenas de cuidado, vivienda, transporte, empleo, abastecimiento, salud y evacuación.</p>
+            <div class="finding-side-kicker">CONCLUSIÓN</div>
+            <p>El POT es indispensable como instrumento jurídico, pero insuficiente como modelo explicativo único. La simulación agrega la capa que permite observar la ciudad mientras cambia: quién queda conectado, quién acumula fatiga, qué infraestructura se rompe y cómo responden las comunidades y los ecosistemas.</p>
+            <div class="finding-side-speech"><strong>Qué decir en vivo:</strong><br>“La conclusión de esta red es que la ciudad no se comporta como el texto que la regula. El POT fija reglas y localizaciones; la simulación muestra las relaciones, los efectos acumulados y las decisiones que aparecen cuando esas reglas se encuentran con la vida cotidiana.”</div>
+          </div>
+
+          <aside class="network-legend">
+            <div class="legend-title">Convenciones de la tabla</div>
+            <div class="legend-item legend-static"><span class="legend-dot" style="background:#ffffff;"></span> Bolita = nodo de la tabla</div>
+            <div class="legend-item legend-static"><span class="legend-ic"><i class="fa-solid fa-circle-nodes"></i></span> Ícono = tipo de nodo</div>
+            <div class="legend-item legend-static"><span class="legend-line-sample"></span> Línea continua = relación directa</div>
+            <div class="legend-item legend-static"><span class="legend-line-sample dashed"></span> Línea punteada = relación indirecta</div>
+            <div class="legend-item legend-static"><span class="legend-flow-sample"></span> Puntos móviles = intercambio</div>
+
+            <div class="legend-title">Color = subsistema</div>
+            <div class="legend-item legend-static"><span class="legend-dot" style="background:#43c7d7;"></span> Sistema hídrico</div>
+            <div class="legend-item legend-static"><span class="legend-dot" style="background:#6bcf8f;"></span> Sistema biótico</div>
+            <div class="legend-item legend-static"><span class="legend-dot" style="background:#b7c0cb;"></span> Sistema físico-urbano</div>
+            <div class="legend-item legend-static"><span class="legend-dot" style="background:#f1cf5b;"></span> Sistema de movilidad</div>
+            <div class="legend-item legend-static"><span class="legend-dot" style="background:#c6a0e9;"></span> Sistema de cuidado, servicios y espacio público</div>
+            <div class="legend-item legend-static"><span class="legend-dot" style="background:#e98b67;"></span> Sistema socioeconómico y de ocupación</div>
+            <div class="legend-item legend-static"><span class="legend-dot" style="background:#ef9a4b;"></span> Sistema social-comunitario</div>
+            <div class="legend-item legend-static"><span class="legend-dot" style="background:#f07bb1;"></span> Sistema patrimonial y de memoria</div>
+            <div class="legend-item legend-static"><span class="legend-dot" style="background:#9d8be8;"></span> Sistema institucional de gestión</div>
+
+            <div class="legend-divider"></div>
+            <div class="legend-hint">Los 150 nodos están visibles desde el inicio y ocupan todo el cuadrado. La red incorpora 165 relaciones de la tabla entre 127 nodos conectados. Toca una bolita o una conexión para ver su registro. Al elegir una situación, la red cambia su intensidad y muestra qué procesos se activan.</div>
+          </aside>
+
+
+          <div class="edge-info-panel" id="edgeInfoPanel">
+            <div class="edge-info-header">
+              <span id="edgeInfoTitle">Relación</span>
+              <button class="edge-info-close" id="edgeInfoClose" type="button" aria-label="Cerrar">&times;</button>
+            </div>
+
+            <div class="edge-info-row">
+              <div class="edge-info-label">Nombre</div>
+              <div class="edge-info-value" id="edgeInfoConvencion">—</div>
+            </div>
+            <div class="edge-info-row">
+              <div class="edge-info-label">Subsistema</div>
+              <div class="edge-info-quote" id="edgeInfoEvidencia">—</div>
+              <div class="edge-info-page" id="edgeInfoPage"></div>
+            </div>
+            <div class="edge-info-row">
+              <div class="edge-info-label">Type</div>
+              <div class="edge-info-value" id="edgeInfoActores">—</div>
+            </div>
+            <div class="edge-info-row">
+              <div class="edge-info-label">Registro</div>
+              <div class="edge-info-value" id="edgeInfoSituacion">—</div>
+            </div>
+            <div class="edge-info-row">
+              <div class="edge-info-label">Lectura</div>
+              <div class="edge-info-quote" id="edgeInfoCritica">—</div>
+            </div>
+            <div class="edge-info-live" id="edgeInfoLiveScript">
+              Haz clic en un agente, una conexión o una situación para ver qué decir en vivo.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <footer>
-      "No se trata de representar la ciudad, sino de comprenderla para transformarla." — <span>Equipo POT Reverse Engineering</span>
-    </footer>
+    <!-- SITUACIONES: estados que modifican la intensidad de la red -->
+    <div class="situaciones-panel">
+      <div class="situaciones-head">
+        <h3><i class="fa-solid fa-clock-rotate-left"></i> Situaciones — qué momento quieres leer</h3>
+        <p>Cada situación no agrega nodos nuevos: cambia la intensidad, el grosor o la visibilidad de relaciones que ya existen.</p>
+      </div>
+      <div class="situaciones-row" id="situacionesRow"></div>
+      <div class="situacion-desc" id="situacionDesc">Sin situación activa: todas las relaciones se leen en su intensidad documental de base.</div>
+    </div>
 
-  </main>
-</div>
+    <section class="reader-findings" aria-labelledby="reader-findings-title">
+      <div class="reader-findings-head">
+        <div>
+          <div class="reader-pillars-kicker">HALLAZGOS QUE LA RED HACE VISIBLES</div>
+          <h2 id="reader-findings-title">Lo que aparece cuando el POT se lee como sistema</h2>
+        </div>
+        <p>La tabla ya no queda separada del diagrama: estos cuatro hallazgos se convierten en nodos de interpretación conectados con la lectura dinámica.</p>
+      </div>
+      <div class="reader-findings-grid">
+        <article class="reader-finding finding-pink">
+          <div class="reader-finding-node"><i class="fa-solid fa-diagram-project"></i></div>
+          <div><h3>Red de mundo pequeño, no de sistema dinámico</h3><p>Las 45 relaciones documentadas son internas a EEP, EFC, ESECI o EIP: estructuras densas hacia adentro y prácticamente aisladas entre sí.</p><span>0 puentes reales entre estructuras · 7 vacíos de articulación</span></div>
+        </article>
+        <article class="reader-finding finding-teal">
+          <div class="reader-finding-node"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div><h3>General vs. particular</h3><p>El POT nombra por su nombre propio a la Reserva Thomas van der Hammen, pero trata “Humedales” como una categoría genérica de 39 conceptos.</p><span>Humedales: hub de mayor grado real · 6 conexiones</span></div>
+        </article>
+        <article class="reader-finding finding-orange">
+          <div class="reader-finding-node"><i class="fa-solid fa-draw-polygon"></i></div>
+          <div><h3>Polígonos fijos, territorios móviles</h3><p>Los realinderamientos y las correcciones oficiales muestran que el límite jurídico-administrativo no coincide de forma estable con el límite ecológico.</p><span>Art. 12, parágrafo 2 · Arts. 573–574 · Resolución 1488/2023</span></div>
+        </article>
+        <article class="reader-finding finding-purple">
+          <div class="reader-finding-node"><i class="fa-solid fa-scale-unbalanced"></i></div>
+          <div><h3>La ESECI no tiene lógica sistémica propia</h3><p>Con solo 2 artículos en el capítulo de Estructuras Territoriales, aporta 9 conceptos y 9 relaciones que permanecen internas a sí misma.</p><span>Su desarrollo aparece disperso en el Libro III como “Áreas de Actividad”.</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HERO: GESTOR DE LECTURA -->
+    <section class="hero-reader">
+      <div class="hero-top">
+        <div class="hero-eyebrow"><span class="eyebrow-line"></span> GESTOR DE LECTURA</div>
+        <button class="agency-toggle" id="agencyToggle" onclick="toggleAgency()">
+          <span class="agency-switch"><span class="agency-knob"></span></span>
+          <span>Activar Dimensión Dinámica</span>
+        </button>
+      </div>
+
+      <h2 class="hero-title"><span class="hero-accent">Módulo Simulador</span> — de las reglas escritas a la simulación viva</h2>
+      <p class="hero-sub">Del POT como texto lineal <i class="fa-solid fa-arrow-right-long"></i> a la ciudad como sistema vivo</p>
+      <p class="hero-lead">Si el POT tiene reglas generativas pero no las corre, esta plataforma permite ejecutar la simulación que el Plan escribe pero nunca realiza: agentes que se mueven, viviendas que condicionan la vida cotidiana y ecosistemas que responden en el tiempo.</p>
+
+      <div class="simulator-principles" aria-label="Tres pilares del simulador">
+        <article class="simulator-principle principle-people"><i class="fa-solid fa-people-arrows"></i><div><strong>Personas</strong><span>Agentes de cuidado · 15 minutos caminando · fatiga y tiempo disponible</span></div></article>
+        <article class="simulator-principle principle-housing"><i class="fa-solid fa-house-chimney-user"></i><div><strong>Viviendas</strong><span>Habitabilidad · Art. 384 · 36 m² / 42 m² · mejoramiento progresivo</span></div></article>
+        <article class="simulator-principle principle-ecosystems"><i class="fa-solid fa-water"></i><div><strong>Ecosistemas</strong><span>Matriz ordenadora · escorrentía · riesgo · drenaje sostenible</span></div></article>
+      </div>
+
+      <div class="hero-compare">
+        <div class="compare-card compare-static">
+          <div class="compare-head"><i class="fa-solid fa-circle-dot"></i> Lectura Estática</div>
+          <p class="compare-desc">El POT leído como una suma de objetos, artículos y relaciones fijas.</p>
+          <div class="compare-viz" id="staticViz">
+            <svg viewBox="0 0 260 170"><circle cx="130" cy="85" r="46" class="static-blob"/></svg>
+          </div>
+          <ul class="compare-list">
+            <li><i class="fa-solid fa-circle-dot"></i> Relación aislada</li>
+            <li><i class="fa-solid fa-circle-dot"></i> Sin actores ni mediadores</li>
+            <li><i class="fa-solid fa-circle-dot"></i> Intensidad única y fija</li>
+          </ul>
+        </div>
+
+        <div class="compare-card compare-dynamic">
+          <div class="compare-head"><i class="fa-solid fa-wave-square"></i> Lectura Dinámica</div>
+          <p class="compare-desc">Una simulación donde agentes, vivienda y ecosistemas interactúan y cambian.</p>
+          <div class="compare-viz" id="dynamicViz"></div>
+          <ul class="compare-list">
+            <li><i class="fa-solid fa-check"></i> Incluye actores y mediadores</li>
+            <li><i class="fa-solid fa-check"></i> Cambia según la situación</li>
+            <li><i class="fa-solid fa-check"></i> Intensidad variable</li>
+          </ul>
+        </div>
+      </div>
+
+      <blockquote class="hero-quote">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>Una relación territorial no es un dato fijo: depende de quién la usa, qué la hace posible y en qué momento ocurre.</p>
+        <span>Equipo POT Reverse Engineering</span>
+      </blockquote>
+
+      <section class="simulador-pot-modulo" aria-labelledby="simulador-pot-title">
+        <h2 id="simulador-pot-title">Módulo Simulador — de las reglas escritas a la simulación viva</h2>
+        <p>Si el POT tiene reglas generativas pero no las corre, nuestra plataforma es precisamente el artefacto que permite correr esa simulación que el Plan escribe pero nunca ejecuta.</p>
+        <p>Construimos el modelo alrededor de tres pilares que interactúan dinámicamente, superando la separación tradicional entre “ciudad física” y “ciudad social”:</p>
+        <div class="simulador-pot-pilar">
+          <h3>Personas — agentes de cuidado</h3>
+          <p>Con enfoque de género y derechos del Sistema Distrital de Cuidado, cada agente tiene una trayectoria diaria orientada a resolver necesidades en un rango de 15 minutos caminando. No es una distancia medida en línea recta sobre un mapa: es fatiga acumulada, tiempo disponible y simultaneidad de servicios.</p>
+        </div>
+        <div class="simulador-pot-pilar">
+          <h3>Viviendas — soporte de habitabilidad</h3>
+          <p>Tomamos los estándares reales del POT —36 m² para VIS/VIP, 42 m² para acreditación de obligaciones— y la posibilidad de mejoramiento progresivo. La vivienda no es un punto fijo en el mapa: es el nodo de origen y retorno de cada agente, y afecta dinámicamente su nivel de estrés y salud.</p>
+        </div>
+        <blockquote class="simulador-pot-cita"><strong>🗣️ Cita para decir en voz alta:</strong> “El Artículo 384 fija el área mínima de una vivienda VIS o VIP en ‘36 metros cuadrados’, con cocina, baño, dos cuartos y una zona multifuncional. Y el Parágrafo 1 exige que, para acreditar la obligación urbanística, esa área mínima habitable sea de ‘42 metros cuadrados’. Son los números exactos que usamos como condición inicial de cada agente-vivienda en la simulación.”</blockquote>
+        <div class="simulador-pot-pilar">
+          <h3>Ecosistemas — matriz ecológica ordenadora</h3>
+          <p>El entorno no es un fondo inerte. Programamos los conectores ecosistémicos y el comportamiento hídrico —escorrentía, mitigación de riesgo, sistemas urbanos de drenaje sostenible— como un actor que interactúa físicamente con la movilidad de las personas y la estabilidad de las viviendas de borde.</p>
+        </div>
+        <p>Y sobre estos tres pilares, simulamos lo que el POT declara pero no prueba:</p>
+        <p>Qué pasa cuando un agente no tiene acceso a vivienda formal y se autoconstruye en una ladera de riesgo por supervivencia —la autoorganización informal que el plan reconoce en el papel, pero no modela en la práctica.</p>
+        <p>Qué pasa cuando una perturbación esporádica —un sismo, una inundación— rompe la infraestructura física de un andén, y los agentes tienen que autodeterminarse en tiempo real, ignorando la ruta que el POT formal había previsto, para evacuar hacia el espacio público seguro más cercano.</p>
+        <p class="simulador-pot-cierre">No estamos reemplazando al POT. Estamos construyendo la capa que el instrumento jurídico, por su propia naturaleza, no puede escribir: la ciudad mientras está siendo, no solo la ciudad como debería ser.</p>
+      </section>
+    </section>
+
+    <!-- STATS -->
+    <div class="reader-stats" id="readerStats">
+      <div class="stat-card" style="--stat-color:#2fd4c8;">
+        <div class="stat-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+        <div class="stat-value" id="statComponentes">—</div>
+        <div class="stat-label">Componentes territoriales</div>
+      </div>
+      <div class="stat-card" style="--stat-color:#f5a623;" id="statActoresCard">
+        <div class="stat-icon"><i class="fa-solid fa-people-group"></i></div>
+        <div class="stat-value" id="statActores">—</div>
+        <div class="stat-label">Actores</div>
+      </div>
+      <div class="stat-card" style="--stat-color:#7d8ea3;" id="statMediadoresCard">
+        <div class="stat-icon"><i class="fa-solid fa-signs-post"></i></div>
+        <div class="stat-value" id="statMediadores">—</div>
+        <div class="stat-label">Mediadores</div>
+      </div>
+      <div class="stat-card" style="--stat-color:#f76fb0;">
+        <div class="stat-icon"><i class="fa-solid fa-link"></i></div>
+        <div class="stat-value" id="statRelaciones">—</div>
+        <div class="stat-label">Relaciones activas</div>
+      </div>
+    </div>
+
+    <!-- LO QUE DEMUESTRA -->
+    <div class="synergies-section">
+      <div class="synergies-grid">
+        <div class="synergy-card success">
+          <div class="synergy-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <div class="synergy-content">
+            <h4>Lo que ya reconoce el POT</h4>
+            <ul>
+              <li><strong>Componentes documentados:</strong> los nodos coloreados por estructura son los mismos componentes ya identificados en las 4 estructuras del POT (EEP, EFS, ESE, EIP).</li>
+              <li><strong>Relaciones directas:</strong> las líneas continuas citan página y frase exacta del documento.</li>
+              <li><strong>Nada se compone:</strong> ningún nodo contiene a otro — cada uno es independiente, incluso dentro de la misma estructura.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="synergy-card conflict">
+          <div class="synergy-icon"><i class="fa-solid fa-eye-low-vision"></i></div>
+          <div class="synergy-content">
+            <h4>Lo que esta lectura agrega</h4>
+            <ul>
+              <li><strong>Actores:</strong> quién usa, opera, protege o transforma cada relación — no es lo mismo un estudiante que una persona cuidadora.</li>
+              <li><strong>Mediadores:</strong> qué hace posible la relación en la práctica — estaciones, andenes, senderos, puentes peatonales.</li>
+              <li><strong>Situaciones:</strong> una relación no tiene una intensidad única — cambia en hora pico, en temporada de lluvias, durante una obra.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIMULACIÓN DE MOVILIDAD (SUMO) -->
+    <div class="sumo-sim-section">
+      <div class="sumo-sim-heading">
+        <h3><i class="fa-solid fa-car-side"></i> Simulación de movilidad (SUMO)</h3>
+        <p>Trayectorias vehiculares simuladas sobre la red vial real de Kennedy, exportadas desde SUMO (<code>osm.net.xml</code> + <code>trazado.xml</code>).</p>
+      </div>
+      <div class="sumo-sim-card">
+        <div class="sumo-canvas-wrap">
+          <canvas id="sumoNetCanvas"></canvas>
+          <canvas id="sumoVehCanvas"></canvas>
+          <div class="sumo-sim-overlay" id="sumoStatus">Cargando red vial…</div>
+        </div>
+        <div class="sumo-sim-controls">
+          <button type="button" id="sumoPlayPause" class="sumo-btn" aria-label="Reproducir / pausar"><i class="fa-solid fa-play"></i></button>
+          <input type="range" id="sumoTimeSlider" min="0" max="1000" value="0" step="1" disabled>
+          <span id="sumoTimeLabel">00:00 / 00:00</span>
+          <label class="sumo-speed-label">Velocidad
+            <select id="sumoSpeedSelect">
+              <option value="1">1×</option>
+              <option value="2" selected>2×</option>
+              <option value="4">4×</option>
+              <option value="8">8×</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+
+<script src="modulo-08.js"></script>
+<script src="modulo-08-sumo.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 </body>
 </html>
